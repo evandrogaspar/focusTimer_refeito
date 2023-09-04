@@ -10,8 +10,44 @@
   --text-color:hsl(var(--hue), 40%, 98%);
   --primary-color:hsl(var(--hue), 100%, 63%);
   --controls-bg-color:hsl(var(--hue), 0%, 14%);
+  --button-secondary:hsl(var(--hue), 40%, 98%)
 
   font-size: clamp(40%, 1% + 2vw, 62.5%)
+}
+
+
+html.light {
+  --bg-color:hsl(var(--hue), 40%, 98%);
+  --text-color:hsl(var(--hue), 5%, 7%);
+  --button-secondary:hsl(var(--hue), 40%, 98%)
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon{
+  display: none;
+}
+
+#toggle-mode {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-size: 2.2rem;
+  line-height: 0;
+
+  color: var(--text-color);
+}
+
+/* classe utilitária */
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
 }
 
 body {
@@ -59,8 +95,8 @@ button {
   font-size: 6.4rem;
 }
 
-.secondary{
-  color: var(--text-color);
+.secondary {
+  color: var(--button-secondary);
 }
 
 
@@ -74,3 +110,4 @@ html:not(.music-on) .ph-speaker-high
 {
   display: none;
 }
+
