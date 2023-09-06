@@ -1,8 +1,12 @@
 import state from './state.js'
 import * as el from './elements.js'
 import { reset } from './actions.js'
+import { kichenTimer } from './sounds.js'
 
 export function countdown(){
+
+  clearTimeout(state.countdownId)
+
  if(!state.isRunning) {
   return 
  }
@@ -19,13 +23,14 @@ export function countdown(){
 
  if(minutes < 0) {
   reset()
+  kichenTimer.play()
   return
  }
 
  
 updateDisplay(minutes, seconds)
 
- setTimeout(() => countdown(), 1000)
+ state.countdownId = setTimeout(() => countdown(), 1000)
 
 }
 
