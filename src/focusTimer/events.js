@@ -24,6 +24,7 @@ export function setMinutes(){
   //aplicação de expressão regular para aceitar apenas números no campo de minutos ao inserir os minutos desejados.
   el.minutes.onkeydown = (event) => /\d/.test(event.key)
 
+
   el.minutes.addEventListener("blur", (event) => {
     let time = event.currentTarget.textContent
     time = time > 60 ? 60 : time
@@ -35,3 +36,4 @@ export function setMinutes(){
     el.minutes.removeAttribute('contenteditable')
   })
 }
+
